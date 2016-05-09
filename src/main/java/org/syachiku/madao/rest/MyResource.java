@@ -13,11 +13,8 @@ import javax.ws.rs.core.MediaType;
 @Path("test")
 public class MyResource {
 	
-	@PathParam("pathParam") private String pathParamExample;
-	@QueryParam("query") private String queryParamExample;
-	
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(value = {"text/shortdate", MediaType.TEXT_PLAIN})
 	public Date testMethod(){
 		return Calendar.getInstance().getTime();
 	}
