@@ -2,7 +2,7 @@ package org.syachiku.madao.rest.client;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation.Builder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -29,6 +29,16 @@ public class RestApiClient {
 				.request(MediaType.APPLICATION_JSON)
 				.get(Message.class);
 		
+		Message newMessage = new Message(4, "My New message from JAX-RS client.", "Madao");
+		Response postResponse = messagesTarget
+				.request()
+				.post(Entity.json(newMessage));;
+		
+		if (postResponse.getStatus() != 201){
+			System.out.println("Error");
+		}
+		Message createdMessage = postResponse.readEntity(Message.class);
+		System.out.println(createdMessage.getMessage());
 		
 		/*
 		 * You can convert the retrieved content into String class, get the actual http payload, to debug, which is much less possible to go wrong.  
@@ -39,8 +49,6 @@ public class RestApiClient {
 		Response response = builder.get();
 		*/
 		//Message message = response.readEntity(Message.class);
-		System.out.println(message1.getMessage());
-		System.out.println(message2.getMessage());
 	}
 
 }
