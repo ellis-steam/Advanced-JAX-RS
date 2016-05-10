@@ -15,9 +15,20 @@ public class RestApiClient {
 		
 		Client client = ClientBuilder.newClient();
 		
-		Message message = client.target("http://localhost:8080/advanced-jaxrs-01/webapi/messages/2")
+		WebTarget baseTarget = client.target("http://localhost:8080/advanced-jaxrs-01/webapi/");
+		WebTarget messagesTarget = baseTarget.path("messages");
+		WebTarget singleMessageTarget = messagesTarget.path("{messageId}");
+		
+		Message message1 = singleMessageTarget
+				.resolveTemplate("messageId", "1")
 				.request(MediaType.APPLICATION_JSON)
 				.get(Message.class);
+		
+		Message message2 = singleMessageTarget
+				.resolveTemplate("messageId", "2")
+				.request(MediaType.APPLICATION_JSON)
+				.get(Message.class);
+		
 		
 		/*
 		 * You can convert the retrieved content into String class, get the actual http payload, to debug, which is much less possible to go wrong.  
@@ -28,7 +39,8 @@ public class RestApiClient {
 		Response response = builder.get();
 		*/
 		//Message message = response.readEntity(Message.class);
-		System.out.println(message);
+		System.out.println(message1.getMessage());
+		System.out.println(message2.getMessage());
 	}
 
 }
