@@ -37,6 +37,7 @@ public class RestApiClient {
 		if (postResponse.getStatus() != 201){
 			System.out.println("Error");
 		}
+		
 		Message createdMessage = postResponse.readEntity(Message.class);
 		System.out.println(createdMessage.getMessage());
 		
