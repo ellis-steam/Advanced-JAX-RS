@@ -1,5 +1,7 @@
 package org.syachiku.madao.rest.client;
 
+import java.util.Date;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -7,6 +9,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.syachiku.madao.rest.MyResource;
 import org.syachiku.madao.messenger.model.Message;
 
 public class RestApiClient {
@@ -50,6 +53,10 @@ public class RestApiClient {
 		Response response = builder.get();
 		*/
 		//Message message = response.readEntity(Message.class);
+		
+		Date test;
+		MyResource mr = new MyResource();
+		test = mr.testMethod();
 	}
 
 }
