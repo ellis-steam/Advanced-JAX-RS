@@ -2,6 +2,17 @@ package org.syachiku.madao.messenger.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.syachiku.madao.messenger.exception.DataNotFoundExceptionMapper;
+import org.syachiku.madao.messenger.exception.GenericExceptionMapper;
+
+/**
+ * The error message be provide to the ExceptionMapper to return.
+ * 
+ * @author Ellis
+ * @since 2016-05-19
+ * @see DataNotFoundExceptionMapper
+ * @see GenericExceptionMapper
+ */
 @XmlRootElement
 public class ErrorMessage {
 	
@@ -13,6 +24,13 @@ public class ErrorMessage {
 		
 	}
 	
+	/**
+	 * Contructs a new errorMessage.
+	 * 
+	 * @param errorMessage string content to describe the error
+	 * @param errorCode the int number of the HTTP status code
+	 * @param documentation string of docs that contain any information to solve the error. Typically a URL link. 
+	 */
 	public ErrorMessage(String errorMessage, int errorCode, String documentation) {
 		super();
 		this.errorMessage = errorMessage;

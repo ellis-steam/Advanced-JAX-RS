@@ -12,9 +12,10 @@ import javax.xml.bind.annotation.XmlTransient;
 /**
  * Message model of the service.
  * 
- * @see #addLink(String, String)
+ * @see Comment
+ * @see Profile
  * @author Ellis
- *
+ * @since 2016-05-19
  */
 
 @XmlRootElement
@@ -30,6 +31,13 @@ public class Message {
 	public Message(){
 	}
 	
+	/**
+	 * Constructs a new Message.
+	 * 
+	 * @param id long number to indentify the Message
+	 * @param message string content of the Message
+	 * @param author string of the author's name
+	 */
 	public Message(long id, String message, String author) {
 		this.id = id;
 		this.message = message;

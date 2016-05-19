@@ -1,5 +1,11 @@
 package org.syachiku.madao.messenger.model;
 
+/**
+ * Links that can be included in the response to make the api more HATEOAS.
+ * 
+ * @author Ellis
+ * @since 2016-05-19
+ */
 public class Link {
 	private String link;
 	private String rel;

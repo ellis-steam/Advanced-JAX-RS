@@ -15,6 +15,11 @@ public class PoweredByResponseFilter implements ContainerResponseFilter{
 			throws IOException {
 		responseContext.getHeaders().add("X-Powered-By", "Syachiku Madao");
 		
+		//for CORS support to use Swagger UI
+		responseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
+		responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, OPTIONS");
+		responseContext.getHeaders().add("Access-Control-Allow-Headers", "Content-Type, api_key, Authorization");
+		
 		
 	}
 	

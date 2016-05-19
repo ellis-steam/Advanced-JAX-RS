@@ -1,3 +1,4 @@
 /target/
 /samples/dynamic-html/*
 /samples/html/*
+/swagger-tool/*

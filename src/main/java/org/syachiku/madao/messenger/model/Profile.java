@@ -2,6 +2,13 @@ package org.syachiku.madao.messenger.model;
 
 import java.util.Date;
 
+/**
+ * The profile for a user.
+ * 
+ * @author Ellis
+ * @since 2016-05-19
+ * 
+ */
 public class Profile {
 	
 	private long id;
@@ -15,7 +22,14 @@ public class Profile {
 	}
 	
 	
-	
+	/**
+	 * Constructs a new profile.
+	 * 
+	 * @param id long number to indentify the profile.
+	 * @param profileName string name of the profile.
+	 * @param firstName string firstName of the profile owner.
+	 * @param lastName string lastName of the profile owner. 
+	 */
 	public Profile(long id, String profileName, String firstName, String lastName) {
 		super();
 		this.id = id;

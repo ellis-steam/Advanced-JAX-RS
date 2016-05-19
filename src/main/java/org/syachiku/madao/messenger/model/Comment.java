@@ -2,6 +2,12 @@ package org.syachiku.madao.messenger.model;
 
 import java.util.Date;
 
+/**
+ * Comment model, which is the comment of a message.
+ * 
+ * @author Ellis
+ * @see Message
+ */
 public class Comment {
 	private long id;
 	private String message;
@@ -14,7 +20,13 @@ public class Comment {
 
 	
 	
-	
+	/**
+	 * Constructs a new comment.
+	 * 
+	 * @param id the long number to indentify the comment
+	 * @param message the string content of the comment 
+	 * @param author the string of the author's name
+	 */
 	public Comment(long id, String message, String author) {
 		this.id = id;
 		this.message = message;

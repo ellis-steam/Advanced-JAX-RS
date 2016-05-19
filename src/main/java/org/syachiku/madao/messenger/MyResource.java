@@ -7,6 +7,8 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * Root resource (exposed at "myresource" path)
+ * @author Ellis
+ * @since 2016-05-18
  */
 @Path("myresource")
 public class MyResource {
@@ -15,7 +17,8 @@ public class MyResource {
      * Method handling HTTP GET requests. The returned object will be sent
      * to the client as "text/plain" media type.
      *
-     * @return String that will be returned as a text/plain response.
+     * @return Returns "Got it!" in MediaType.TEXT_PLAIN as a signal that indicates messenger.MyResource is working fine.
+     * 
      */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
