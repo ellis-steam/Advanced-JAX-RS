@@ -8,9 +8,19 @@ import javax.ws.rs.ext.ParamConverter;
 import javax.ws.rs.ext.ParamConverterProvider;
 import javax.ws.rs.ext.Provider;
 
+
+/**
+ * A simple practice of custom ParamConverter.<p>
+ * 
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ * @see MyDate
+ * @see DateResource
+ */
 @Provider
 public class MyDateConverterProvider implements ParamConverterProvider {
-
+	
 	@Override
 	public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
 		if (rawType.getName().equals(MyDate.class.getName())) {

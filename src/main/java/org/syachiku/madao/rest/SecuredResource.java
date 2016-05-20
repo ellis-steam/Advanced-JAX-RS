@@ -5,6 +5,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+/**
+ * Sample resource to demo the Security filter.
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ * @see SecurityFilter
+ */
 @Path("secured")
 public class SecuredResource {
 	

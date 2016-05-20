@@ -5,10 +5,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.syachiku.madao.messenger.database.DatabaseClass;
+import org.syachiku.madao.messenger.model.Comment;
 import org.syachiku.madao.messenger.model.Profile;
 
 
-
+/**
+ * Storage of the profiles, only in a <code>Map</code>, it should be connect to a database in real life,
+ * but here is just for a quick start to learn JAX-RS.<p> 
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ * @see Profile
+ */
 public class ProfileService {
 	
 	private Map<String, Profile> profiles = DatabaseClass.getProfiles();

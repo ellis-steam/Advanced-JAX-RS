@@ -9,6 +9,13 @@ import javax.ws.rs.core.MediaType;
 
 import org.syachiku.madao.messenger.model.Message;
 
+
+/**
+ * Shows a way to get list of objects back from server using GenericType.
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ */
 public class GenericDemo {
 
 	public static void main(String[] args) {

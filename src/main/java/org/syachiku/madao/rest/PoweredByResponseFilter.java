@@ -7,6 +7,13 @@ import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 
+/**
+ * Sample filter for adding headers, also added some headers for Swagger UI to work with.
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ * 
+ */
 @Provider
 public class PoweredByResponseFilter implements ContainerResponseFilter{
 

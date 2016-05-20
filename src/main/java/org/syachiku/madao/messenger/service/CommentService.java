@@ -14,6 +14,14 @@ import org.syachiku.madao.messenger.model.Comment;
 import org.syachiku.madao.messenger.model.ErrorMessage;
 import org.syachiku.madao.messenger.model.Message;
 
+/**
+ * Storage of the comments, only in a <code>Map</code>, it should be connect to a database in real life,
+ * but here is just for a quick start to learn JAX-RS.<p> 
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ * @see Comment
+ */
 public class CommentService {
 	private Map<Long, Message> messages = DatabaseClass.getMessages();
 	

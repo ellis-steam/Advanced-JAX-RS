@@ -8,6 +8,11 @@ import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 
+/**
+ * Filter to log any Request and Response action, prints the header to the console.
+ * @author Ellis
+ *
+ */
 @Provider
 public class LoggingFilter implements ContainerRequestFilter, ContainerResponseFilter{
 

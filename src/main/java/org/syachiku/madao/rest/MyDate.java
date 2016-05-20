@@ -1,5 +1,13 @@
 package org.syachiku.madao.rest;
 
+/**
+ * Custom date format for custom Param practice.
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ * @see DateResource
+ * @see MyDateConverterProvider
+ */
 public class MyDate {
 	private int date;
 	private int month;

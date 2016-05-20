@@ -12,6 +12,16 @@ import javax.ws.rs.core.Response;
 import org.syachiku.madao.rest.MyResource;
 import org.syachiku.madao.messenger.model.Message;
 
+/**
+ * A standalone REST api client for the project.
+ * <p>
+ * This simple client retrievies two messages with id 1 and 2 back then print their message content in the console,
+ * it also post a message with id 4 and a sentence "My New message from JAX-RS client.", will print the content in the console if success,
+ * prints Error when the POST actions HTTP status code is not 201 Created.
+ * 
+ * @author Ellis
+ * @since 2016-05-20
+ */
 public class RestApiClient {
 
 	public static void main(String[] args) {
@@ -26,11 +36,13 @@ public class RestApiClient {
 				.resolveTemplate("messageId", "1")
 				.request(MediaType.APPLICATION_JSON)
 				.get(Message.class);
+		System.out.println(message1.getMessage());
 		
 		Message message2 = singleMessageTarget
 				.resolveTemplate("messageId", "2")
 				.request(MediaType.APPLICATION_JSON)
 				.get(Message.class);
+		System.out.println(message2.getMessage());
 		
 		Message newMessage = new Message(4, "My New message from JAX-RS client.", "Madao");
 		Response postResponse = messagesTarget

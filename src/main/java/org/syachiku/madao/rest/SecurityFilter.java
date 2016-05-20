@@ -11,6 +11,18 @@ import javax.ws.rs.ext.Provider;
 
 import org.glassfish.jersey.internal.util.Base64;
 
+/**
+ * Sample of Basic Auth usage with any URL had "secured" in it.  
+ * <p>
+ * username: "user", password: "password"
+ * <p>
+ * Returns "User cannot access the resource" when auth failed.
+ * <p>
+ * Try /webapi/secured/message, it will return "This API is secured." when authentication was success.
+ * @author Ellis
+ * @since 2016-05-20
+ * @see SecuredResource
+ */
 @Provider
 public class SecurityFilter implements ContainerRequestFilter{
 
